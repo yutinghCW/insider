@@ -3,7 +3,7 @@ $("#edmType").change(function () {
 	document.location.href = host + $(this).val() + ".html";
 });
 
-function init(codeImg, codeTitle, codeLink, codeBtn, codeVeriant) {
+function init(codeImg, codeTitle, codeLink, codeBtn) {
 	var html = '';
 	html += '<div class="smartbanner"><div class="content-wrapper"><div class="ins-selectable-element ins-element-wrap ins-element-close-button smart-banner-close-button smartbanner__close"><div class="ins-element-content"><i class="icon icon-cancel"></i></div></div><div class="adaptive-image ins-selectable-element ins-element-wrap element-image smartbanner__img"><div class="ins-element-content"><a class="ins-element-link" href="';
 	html += codeLink;
@@ -25,9 +25,8 @@ $('#preview').on('click', function(){
 	var codeImg = $("#sb-img").val(),
 		codeTitle = $("#sb-title").val(),
 		codeLink = $("#sb-link").val(),
-		codeBtn = $("#sb-btn").val(),
-		codeVeriant = $("#sb-veriant").val();
-	init(codeImg, codeTitle, codeLink, codeBtn, codeVeriant);
+		codeBtn = $("#sb-btn").val();
+	init(codeImg, codeTitle, codeLink, codeBtn);
     $("#sourceCode").hide(); 
 	$('#previewHtml').show();
 });
@@ -36,9 +35,8 @@ $("#source").click( function(){
 	var codeImg = $("#sb-img").val(),
 		codeTitle = $("#sb-title").val(),
 		codeLink = $("#sb-link").val(),
-		codeBtn = $("#sb-btn").val(),
-		codeVeriant = $("#sb-veriant").val();
-	init(codeImg, codeTitle, codeLink, codeBtn, codeVeriant);
+		codeBtn = $("#sb-btn").val();
+	init(codeImg, codeTitle, codeLink, codeBtn);
     $("#previewHtml").hide();
     $("#sourceCode").show(); 
 });

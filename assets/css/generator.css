@@ -28,15 +28,11 @@ header select {
 
 .form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-gap: 20px;
 }
 .form .form__group {
   max-width: none;
-}
-.form .form__group:first-child {
-  grid-column-start: 0;
-  grid-column-end: span 2;
 }
 .form .form__group .form__group__input {
   min-width: auto;
@@ -132,7 +128,7 @@ section.section--sop .close--sop .icon {
 .smartbanner > .content-wrapper .smartbanner__img img {
   display: block;
   width: 100%;
-  border-radius: 4px !important;
+  border-radius: 4px;
 }
 .smartbanner > .content-wrapper strong {
   font-size: 0.875rem;
