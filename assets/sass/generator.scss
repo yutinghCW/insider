@@ -1,0 +1,160 @@
+@import "_basic";
+@import "_sheet";
+@import "_variable";
+
+header {
+    a.logo.logo--main {
+        margin-right: 10px;
+        + .logo--main {
+            margin-right: 20px;
+            img {
+                height: 30px;
+            }
+        }
+    }
+    select {
+        display: inline-block;
+        padding: 0.5rem 2rem 0.5rem 0;
+        color: $primary;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1;
+        vertical-align: middle;
+        background-image: url('https://yutinghcw.github.io/design/assets/images/common/down--primary.svg');
+        @include background-size(0.78125rem);
+        background-position: calc(100% - 0.78125rem) center;
+        background-repeat: no-repeat;
+        border: 0;
+        cursor: pointer;
+    }
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    .form__group {
+        max-width: none;
+        &:first-child {
+            grid-column-start: 0;
+            grid-column-end: span 2;
+        }
+        .form__group__input {
+            min-width: auto;
+            background-color: $white;
+        }
+    }
+}
+
+#sound {
+    display: none;
+}
+
+section {
+    &.section--btn {
+        font-size: 0;
+        button {
+            @include breakpoint(max-width 767px) {
+                width: 100%;
+            }
+        }
+    }
+    &.section--sop {
+        // display: none;
+        // position: fixed;
+        // top: 50%;
+        // left: 50%;
+        // word-wrap: break-word;
+        // @include translate(-50%, -50%);
+        // z-index: 10;
+        .close--sop {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            padding: 20px;
+            color: $black;
+            border: 0;
+            outline: 0;
+            &:hover {
+                color: $primary;
+            }
+            .icon {
+                display: block;
+                font-size: 1.125rem;
+            }
+        }
+    }
+}
+
+#previewHtml {
+    div.iPhone--375 {
+        width: 375px;
+        height: 605px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: $white;
+        overflow: scroll;
+        > img {
+            width: 375px;
+        }
+    }
+}
+
+#sourceCode {
+    #copySource {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+    textarea {
+        width: 100%;
+    }
+}
+
+.ins-notification-content {
+    display: block !important;
+    width: 100% !important;
+}
+.smartbanner {
+    padding: 10px 15px;
+    background-color: #FAFAFA;
+    border-bottom: 1px solid $gray-100;
+    @media screen and (min-width: 345px) {
+        padding: 10px 20px;
+    }
+    > .content-wrapper {
+        display: grid;
+        grid-template-columns: 1.375rem 1.375rem+2.25rem auto 0.875rem*4+0.875*0.7*2+0.125rem;
+        align-items: center;
+        @media screen and (min-width: 345px) {
+            grid-template-columns: 1.375rem 1.375rem+2.25rem auto 0.875rem*6+0.125rem;
+        }
+        .smartbanner__close {
+            display: block;
+            padding: 3px;
+            color: $black;
+            -webkit-text-stroke: 1px $black;
+            cursor: pointer;
+        }
+        .smartbanner__img {
+            padding: 0 7px 0 15px;
+            img {
+                display: block;
+                width: 100%;
+                border-radius: 4px;
+            }
+        }
+        strong {
+            font-size: 0.875rem;
+        }
+        a.btn {
+            display: block;
+            min-width: auto;
+            color: $white !important;
+            @media screen and (max-width: 344px) {
+                padding: 0.7em;
+            }
+        }
+    }
+}

@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>insider製作工具</title>
+    <meta content="telephone=no" name="format-detection">
+    <meta property="og:image" content="https://topic.cw.com.tw/salesforce/assets/images/meta-share-opinion.jpg"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://www.cw.com.tw/assets_new/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://yutinghcw.github.io/design/assets/css/cw.css">
+    <link rel="stylesheet" href="assets/css/generator.css">
+</head>
+
+<body>
+    <header>
+        <div class="container px20">
+            <a href="https://opinion.cw.com.tw/" target="_blank" class="logo logo--main">
+                <img src="https://www.cw.com.tw/assets_new/img/cw-logo.svg" alt="">
+            </a>
+            <a href="https://opinion.cw.com.tw/" target="_blank" class="logo logo--main">
+                <img src="https://useinsider.com/ch/wp-content/uploads/2018/10/insider_logo_2x.png" alt="">
+            </a>
+            <select name="type" id="edmType" class="edm-type">
+                <option value="smart-banner" selected>Smart Banner</option>
+                <option value="paywall">Paywall</option>
+            </select>
+        </div>
+    </header>
+    <main class="py40">
+        <div class="container">
+            <h2 class="mt0">Smart Banner</h2>
+            <section class="form">
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入圖片網址</div>
+                        <input type="text" id="sb-img" class="form__group__input form__group__input--default" name="sb-img" value="https://www.cw.com.tw/assets_new/img/newsletters/01_cw.jpg">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入標題</div>
+                        <input type="text" id="sb-title" class="form__group__input form__group__input--default" name="sb-title" value="界面清晰，內容扎實">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入按鈕文字</div>
+                        <input type="text" id="sb-btn" class="form__group__input form__group__input--default" name="sb-phrase" value="立即體驗">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入按鈕連結</div>
+                        <input type="text" id="sb-link" class="form__group__input form__group__input--default" name="sb-phrase" value="https://topic.cw.com.tw/cwapp/applink/cwapp.html">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入版本號碼</div>
+                        <input type="text" id="sb-veriant" class="form__group__input form__group__input--default" name="sb-phrase" value="0000">
+                    </div>
+                </div>
+            </section>
+            <hr class="my40">
+            <section class="section--btn">
+                <button id="preview" class="btn btn--contained mb10 ml0 mr10">預覽</button>
+                <button id="source" class="btn btn--contained mb10 mx0">發信用原始碼</button>
+            </section>
+        </div>
+        <section class="mt20">
+            <div id="previewHtml" class="container" style="display: none;">
+                <div class="bg-gray-100 py20">
+                    <div class="iPhone--375">
+                        <img src="assets/images/ad_header.png" alt="廣告與header假版">
+                        <div id="previewBlock"></div>
+                        <img src="assets/images/content.png" alt="內容假版">
+                    </div>
+                </div>
+            </div>
+            <div id="sourceCode" class="container" style="display: none;">
+                <div class="p20 bg-gray-100">
+                    <button id="copySource" class="btn btn--outlined btn--small">複製</button>
+                    <textarea id="javascript" cols="30" rows="10"></textarea>
+                </div>
+                <div class="p20 bg-gray-100">
+                    <button id="copySource" class="btn btn--outlined btn--small">複製</button>
+                    <textarea id="css" cols="30" rows="10">
+.ins-notification-content {
+  display: block !important;
+  width: 100% !important;
+}
+
+.smartbanner {
+  padding: 10px 15px;
+  background-color: #FAFAFA;
+  border-bottom: 1px solid #EEEEEE;
+}
+@media screen and (min-width: 345px) {
+  .smartbanner {
+    padding: 10px 20px;
+  }
+}
+.smartbanner > .content-wrapper {
+  display: grid;
+  grid-template-columns: 1.375rem 3.625rem auto 4.85rem;
+  align-items: center;
+}
+@media screen and (min-width: 345px) {
+  .smartbanner > .content-wrapper {
+    grid-template-columns: 1.375rem 3.625rem auto 5.375rem;
+  }
+}
+.smartbanner > .content-wrapper .smartbanner__close {
+  display: block;
+  padding: 3px;
+  color: #171717;
+  -webkit-text-stroke: 1px #171717;
+  cursor: pointer;
+}
+.smartbanner > .content-wrapper .smartbanner__img {
+  padding: 0 7px 0 15px;
+}
+.smartbanner > .content-wrapper .smartbanner__img img {
+  display: block;
+  width: 100%;
+  border-radius: 4px !important;
+}
+.smartbanner > .content-wrapper strong {
+  font-size: 0.875rem;
+}
+.smartbanner > .content-wrapper a.btn {
+  display: block;
+  min-width: auto;
+  color: #fff !important;
+}
+@media screen and (max-width: 344px) {
+  .smartbanner > .content-wrapper a.btn {
+    padding: 0.7em;
+  }
+}</textarea>
+                </div>
+            </div>
+        </section>
+        <section id="sop" class="section--sop mt60">
+            <div class="container">
+                <div class="bg-gray-100 p30">
+                    <h2 class="my0">基本元件</h2>
+                    <ul class="mb0">
+                        <li class="mb10">
+                            天下 App icon 連結<br/>
+                            <a href="https://www.cw.com.tw/assets_new/img/newsletters/01_cw.jpg" class="btn--text">
+                                https://www.cw.com.tw/assets_new/img/newsletters/01_cw.jpg
+                            </a>
+                        </li>
+                        <li class="mb10">
+                            每日報 App icon 連結<br/>
+                            <a href="https://www.cw.com.tw/assets_new/img/newsletters/05_daily.jpg" class="btn--text">
+                                https://www.cw.com.tw/assets_new/img/newsletters/05_daily.jpg
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="black"></div>
+    </main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://yutinghcw.github.io/design/assets/js/cw.js"></script>
+	<script src="assets/js/generator.js"></script>
+</body>
+
+</html>

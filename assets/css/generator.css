@@ -1,0 +1,151 @@
+header a.logo.logo--main {
+  margin-right: 10px;
+}
+header a.logo.logo--main + .logo--main {
+  margin-right: 20px;
+}
+header a.logo.logo--main + .logo--main img {
+  height: 30px;
+}
+header select {
+  display: inline-block;
+  padding: 0.5rem 2rem 0.5rem 0;
+  color: #D60C18;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  vertical-align: middle;
+  background-image: url("https://yutinghcw.github.io/design/assets/images/common/down--primary.svg");
+  -moz-background-size: 0.78125rem;
+  -o-background-size: 0.78125rem;
+  -webkit-background-size: 0.78125rem;
+  background-size: 0.78125rem;
+  background-position: calc(100% - 0.78125rem) center;
+  background-repeat: no-repeat;
+  border: 0;
+  cursor: pointer;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+.form .form__group {
+  max-width: none;
+}
+.form .form__group:first-child {
+  grid-column-start: 0;
+  grid-column-end: span 2;
+}
+.form .form__group .form__group__input {
+  min-width: auto;
+  background-color: #fff;
+}
+
+#sound {
+  display: none;
+}
+
+section.section--btn {
+  font-size: 0;
+}
+@media (max-width: 767px) {
+  section.section--btn button {
+    width: 100%;
+  }
+}
+section.section--sop .close--sop {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  padding: 20px;
+  color: #171717;
+  border: 0;
+  outline: 0;
+}
+section.section--sop .close--sop:hover {
+  color: #D60C18;
+}
+section.section--sop .close--sop .icon {
+  display: block;
+  font-size: 1.125rem;
+}
+
+#previewHtml div.iPhone--375 {
+  width: 375px;
+  height: 605px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  overflow: scroll;
+}
+#previewHtml div.iPhone--375 > img {
+  width: 375px;
+}
+
+#sourceCode #copySource {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+#sourceCode textarea {
+  width: 100%;
+}
+
+.ins-notification-content {
+  display: block !important;
+  width: 100% !important;
+}
+
+.smartbanner {
+  padding: 10px 15px;
+  background-color: #FAFAFA;
+  border-bottom: 1px solid #EEEEEE;
+}
+@media screen and (min-width: 345px) {
+  .smartbanner {
+    padding: 10px 20px;
+  }
+}
+.smartbanner > .content-wrapper {
+  display: grid;
+  grid-template-columns: 1.375rem 3.625rem auto 4.85rem;
+  align-items: center;
+}
+@media screen and (min-width: 345px) {
+  .smartbanner > .content-wrapper {
+    grid-template-columns: 1.375rem 3.625rem auto 5.375rem;
+  }
+}
+.smartbanner > .content-wrapper .smartbanner__close {
+  display: block;
+  padding: 3px;
+  color: #171717;
+  -webkit-text-stroke: 1px #171717;
+  cursor: pointer;
+}
+.smartbanner > .content-wrapper .smartbanner__img {
+  padding: 0 7px 0 15px;
+}
+.smartbanner > .content-wrapper .smartbanner__img img {
+  display: block;
+  width: 100%;
+  border-radius: 4px !important;
+}
+.smartbanner > .content-wrapper strong {
+  font-size: 0.875rem;
+}
+.smartbanner > .content-wrapper a.btn {
+  display: block;
+  min-width: auto;
+  color: #fff !important;
+}
+@media screen and (max-width: 344px) {
+  .smartbanner > .content-wrapper a.btn {
+    padding: 0.7em;
+  }
+}
+
+/*# sourceMappingURL=generator.css.map */

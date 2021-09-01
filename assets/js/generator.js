@@ -1,0 +1,49 @@
+var host = "http://" + window.location.host + "/";
+$("#edmType").change(function () {
+	document.location.href = host + $(this).val() + ".html";
+});
+
+function init(codeImg, codeTitle, codeLink, codeBtn, codeVeriant) {
+	var html = '';
+	html += '<div class="smartbanner"><div class="content-wrapper"><div class="ins-selectable-element ins-element-wrap ins-element-close-button smart-banner-close-button smartbanner__close"><div class="ins-element-content"><i class="icon icon-cancel"></i></div></div><div class="adaptive-image ins-selectable-element ins-element-wrap element-image smartbanner__img"><div class="ins-element-content"><a class="ins-element-link" href="';
+	html += codeLink;
+	html += '"><img src="';
+	html += codeImg;
+	html += '" class="element-image"></a></div></div><div class="text-container"><div class="adaptive-title ins-selectable-element ins-element-wrap element-text"><strong>';
+	html += codeTitle;
+	html += '</strong></div></div><div class="adaptive-button ins-selectable-element ins-element-wrap element-button ins-download-button"><div class="ins-element-link ins-element-content editable-text"><a href="';
+	html += codeLink;
+	html += '" slide-type="none" class="btn btn--contained btn--small"><div class="editable ins-element-editable">';
+	html += codeBtn;
+	html += '</div></a></div></div></div></div> ';
+	var code = '$(\'' + html + '\').insertAfter("header");';
+	$('#previewBlock').html(html);
+	$("#sourceCode textarea#javascript").val(html);
+}
+
+$('#preview').on('click', function(){
+	var codeImg = $("#sb-img").val(),
+		codeTitle = $("#sb-title").val(),
+		codeLink = $("#sb-link").val(),
+		codeBtn = $("#sb-btn").val(),
+		codeVeriant = $("#sb-veriant").val();
+	init(codeImg, codeTitle, codeLink, codeBtn, codeVeriant);
+    $("#sourceCode").hide(); 
+	$('#previewHtml').show();
+});
+
+$("#source").click( function(){
+	var codeImg = $("#sb-img").val(),
+		codeTitle = $("#sb-title").val(),
+		codeLink = $("#sb-link").val(),
+		codeBtn = $("#sb-btn").val(),
+		codeVeriant = $("#sb-veriant").val();
+	init(codeImg, codeTitle, codeLink, codeBtn, codeVeriant);
+    $("#previewHtml").hide();
+    $("#sourceCode").show(); 
+});
+
+$("button#copySource").click(function(){
+    $(this).siblings('textarea').select();
+    document.execCommand('copy');
+});
