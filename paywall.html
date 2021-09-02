@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Paywall｜insider 製作工具</title>
+    <meta content="telephone=no" name="format-detection">
+    <meta property="og:image" content="https://yutinghcw.github.io/insider/assets/images/meta-share-insider.jpg"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://www.cw.com.tw/assets_new/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://yutinghcw.github.io/design/assets/css/cw.css">
+    <link rel="stylesheet" href="assets/css/generator.css">
+</head>
+
+<body>
+    <header>
+        <div class="container px20">
+            <a href="https://www.cw.com.tw/" target="_blank" class="logo logo--main">
+                <img src="https://www.cw.com.tw/assets_new/img/cw-logo.svg" alt="">
+            </a>
+            <a href="https://commonwealthmagazine.inone.useinsider.com/" target="_blank" class="logo logo--main">
+                <img src="https://useinsider.com/ch/wp-content/uploads/2018/10/insider_logo_2x.png" alt="">
+            </a>
+            <select name="type" id="edmType" class="edm-type">
+                <option value="smart-banner">Smart Banner</option>
+                <option value="paywall" selected>Paywall</option>
+            </select>
+        </div>
+    </header>
+    <main class="py40">
+        <div class="container">
+            <h2 class="mt0">Paywall</h2>
+            <h3 class="mt20 mb10">選擇版本</h3>
+            <section class="form form--paywall">
+                <div class="select__group select__group--outlined select__group--defalt">
+                    <select name="type" id="pw-type" class="pw-type">
+                        <option class="select__group__item" selected>請選擇</option>
+                        <option class="select__group__item" value="p0">Paywall p0</option>
+                        <option class="select__group__item" value="p1">Paywall p1</option>
+                        <option class="select__group__item" value="p2">Paywall p2</option>
+                    </select>
+                    <i class="select__group__help"></i>
+                </div>
+            </section>
+            <h3 class="mt20 mb10">輸入文案</h3>
+            <section class="form form--paywall">
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入實驗版本號碼</div>
+                        <input type="text" id="pw-veriant" class="form__group__input form__group__input--default" name="sb-phrase" value="">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入圖片網址</div>
+                        <input type="text" id="pw-img" class="form__group__input form__group__input--default" name="pw-img" value="">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入標題</div>
+                        <input type="text" id="pw-title" class="form__group__input form__group__input--default" name="pw-title" value="">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入內文</div>
+                        <textarea name="pw-textarea" id="pw-textarea" class="form__group__textarea form__group__textarea--default"></textarea>
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入按鈕連結</div>
+                        <input type="text" id="pw-link" class="form__group__input form__group__input--default" name="pw-phrase" value="">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入按鈕文字</div>
+                        <input type="text" id="pw-btn" class="form__group__input form__group__input--default" name="pw-phrase" value="">
+                    </div>
+                </div>
+            </section>
+            <hr class="my40">
+            <section class="section--btn">
+                <button id="preview" class="btn btn--contained mb10 ml0 mr10">預覽</button>
+                <button id="source" class="btn btn--contained mb10 mx0">實驗用原始碼</button>
+            </section>
+        </div>
+        <section class="mt20">
+            <div id="previewHtml0" class="container" style="display: none;">
+                <div>
+                    <div class="paywall paywall--singleColumn paywall--p0 text-center">
+                        <div class="paywall__header">
+                            您已經是訂戶？<a class="btn btn--text otherBtn" gtm-name="Paywall_popup_0_login" href="https://www.cw.com.tw/member/home/MemberLogin.action?site=C_paywall&amp;source=paywall_popup_login" target="_blank">登入</a>
+                        </div>
+                        <div class="paywall__body">
+                            <img src="https://www.cw.com.tw/images/secant/webaccess-pe@2x.png" alt="線上+紙本閱讀">
+                            <div class="h1 font-weight-500 mt20 mb0">訂閱天下　無限暢讀</div>
+                            <ul class="check">
+                                <li>天下全閱讀：不限篇數暢讀天下雜誌網站和APP</li>
+                                <li>每日編輯精選推薦：整理全球焦點要聞、產業脈動</li>
+                                <li>串聯頂尖媒體：國際合作夥伴，提供您全面的觀點</li>
+                            </ul>
+                            <a id="paywall_box_l0_a_tag" class="btn btn--contained" gtm-name="Paywall_popup_0_sub" target="_blank" href="https://www.cw.com.tw/payment?source=paywall0">查看訂閱方案</a>
+                        </div>
+                        <div class="separation separation--or"><span>或</span></div>
+                        <div class="paywall__footer">
+                            繼續閱讀此篇文章<a href="#!" class="btn--text">加入會員</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="previewHtml1" class="container" style="display: none;">
+                <div>
+                    <div class="paywall paywall--doubleColumn paywall--p1">
+                        <div class="paywall__item paywall__item--text">
+                            <div class="h1 font-weight-500 mt0 mb10">免費閱讀篇數已達上限</div>
+                            <div class="paywall__text mb10">
+                                每日4元，投資更好的自己<br/>首購優惠12週 $399
+                            </div>
+                            <a id="paywall_box_content_l1_a_tag" class="btn btn--contained" href="https://www.cw.com.tw/payment?source=paywall1">查看訂閱方案</a>
+                        </div>
+                        <div class="paywall__item paywall__item--img">
+                            <img src="https://www.cw.com.tw/images/secant/webaccess-pe@2x.png" width="100%" alt="線上+紙本閱讀">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="previewHtml2" class="container" style="display: none;">
+                <div>
+                    <div class="paywall paywall--doubleColumn paywall--p2">
+                        <div class="paywall__item paywall__item--text">
+                            <div class="h1 font-weight-500 mt0 mb10">此篇為訂戶限定文章</div>
+                            <div class="paywall__text mb10">
+                                每日4元，投資更好的自己<br/>首購優惠12週 $399
+                            </div>
+                            <a id="paywall_box_content_l2_a_tag" class="btn btn--contained" href="https://www.cw.com.tw/payment?source=paywall1">查看訂閱方案</a>
+                        </div>
+                        <div class="paywall__item paywall__item--img">
+                            <img src="https://www.cw.com.tw/images/secant/webaccess-pe@2x.png" width="100%" alt="線上+紙本閱讀">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sourceCode" class="container" style="display: none;">
+                <div class="p20 bg-gray-100 text-center">
+                    <button class="btn btn--outlined btn--small mb10">複製</button>
+                    <textarea id="javascript" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+        </section>
+        <div class="black"></div>
+    </main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://yutinghcw.github.io/design/assets/js/cw.js"></script>
+	<script src="assets/js/generator.js"></script>
+	<script src="assets/js/paywall.js"></script>
+</body>
+
+</html>

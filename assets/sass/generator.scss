@@ -31,14 +31,46 @@ header {
 
 .form {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
     grid-gap: 20px;
+    &.form--smartbanner {
+        grid-template-columns: 1.5fr 1fr;
+    }
+    &.form--paywall {
+        grid-template-columns: 1fr 1fr;
+    }
+    select {
+        width: 100%;
+    }
     .form__group {
         max-width: none;
+        .form__group__input, .form__group__textarea {
+            background-color: $white;
+            @include transition(border-color 0.3s);
+        }
         .form__group__input {
             min-width: auto;
-            background-color: $white;
         }
+        .form__group__textarea {
+            min-width: 100%;
+            max-width: 100%;
+            height: 6rem;
+            min-height: auto;
+            outline: 0;
+            &:focus {
+                border-color: $surface;
+            }
+        }
+    }
+}
+
+.paywall {
+    max-width: 700px;
+    margin: 0 auto;
+    @include breakpoint(768px) {
+        font-weight: 300;
+    }
+    &::before {
+        display: none;
     }
 }
 
