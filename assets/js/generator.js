@@ -1,5 +1,5 @@
-// var host = "http://" + window.location.host + "/insider/";
-var host = "http://" + window.location.host + "/";
+var host = "http://" + window.location.host + "/insider/";
+// var host = "http://" + window.location.host + "/";
 $("#edmType").change(function () {
 	document.location.href = host + $(this).val() + ".html";
 });
