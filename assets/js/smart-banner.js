@@ -14,7 +14,6 @@ function init(codeImg, codeTitle, codeLink, codeBtn) {
 	var code = '$(\'.breaking\').remove();';
 	$('#previewBlock').html(html);
 	$("#sourceCode textarea#html").val(html);
-	$("#sourceCode textarea#javascript").val(code);
 }
 
 $('#preview').on('click', function(){
