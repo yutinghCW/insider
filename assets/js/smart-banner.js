@@ -11,9 +11,10 @@ function init(codeImg, codeTitle, codeLink, codeBtn) {
 	html += '" slide-type="none" class="btn btn--contained btn--small"><div class="editable ins-element-editable">';
 	html += codeBtn;
 	html += '</div></a></div></div></div></div> ';
-	var code = '$(\'' + html + '\').insertAfter("header");';
+	var code = '$(\'.breaking\').remove();';
 	$('#previewBlock').html(html);
-	$("#sourceCode textarea#javascript").val(html);
+	$("#sourceCode textarea#html").val(html);
+	$("#sourceCode textarea#javascript").val(code);
 }
 
 $('#preview').on('click', function(){
