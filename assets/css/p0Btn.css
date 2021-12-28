@@ -1,0 +1,41 @@
+.article__function {
+    display: none !important;
+}
+main {
+    overflow: hidden;
+}
+.paywall--insider::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 100%;
+    background-color: #f7f7f7;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+.paywall--insider .essay {
+    line-height: 1.5;
+}
+.paywall--insider .btn__group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+.paywall--insider .paywall__body .btn__group .btn {
+    min-width: 182px;
+}
+@media screen and (max-width: 1023px) {
+    .paywall--insider .btn {
+        order: 1;
+    }
+    .paywall--insider .btn + .btn {
+        margin-left: 0;
+        margin-bottom: 10px;
+        order: 0;
+    }
+}

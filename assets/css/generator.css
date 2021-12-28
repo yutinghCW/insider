@@ -62,6 +62,9 @@ header select {
 .form .form__group .form__group__textarea:focus {
   border-color: #003a9f;
 }
+.form .form__group.double__btn--hide {
+  display: none;
+}
 
 .paywall {
   max-width: 700px;

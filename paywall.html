@@ -13,6 +13,12 @@
     <link rel="shortcut icon" href="https://www.cw.com.tw/assets_new/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://yutinghcw.github.io/design/assets/css/cw.css">
     <link rel="stylesheet" href="assets/css/generator.css">
+    <link rel="stylesheet" href="assets/css/p0Btn.css">
+    <style>
+        .form__group--undone textarea {
+            border-color: #D60C18;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,6 +45,7 @@
                     <select name="type" id="pw-type" class="pw-type">
                         <option class="select__group__item" selected>請選擇*</option>
                         <option class="select__group__item" value="p0">Paywall p0</option>
+                        <option class="select__group__item" value="p0__btn">Paywall p0 雙按鈕</option>
                         <option class="select__group__item" value="p1">Paywall p1</option>
                         <option class="select__group__item" value="p2">Paywall p2</option>
                     </select>
@@ -50,7 +57,7 @@
                 <div class="form__group form__group--outlined">
                     <div class="label">
                         <div class="form__group__placeholder">請輸入實驗版本號碼*</div>
-                        <input type="text" id="pw-veriant" class="form__group__input form__group__input--default" name="sb-phrase" value="">
+                        <input type="text" id="pw-variant" class="form__group__input form__group__input--default" name="sb-phrase" value="">
                     </div>
                 </div>
                 <div class="form__group form__group--outlined">
@@ -83,6 +90,18 @@
                         <input type="text" id="pw-btn" class="form__group__input form__group__input--default" name="pw-phrase" value="">
                     </div>
                 </div>
+                <div class="form__group form__group--outlined double__btn--hide">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入按鈕連結2</div>
+                        <input type="text" id="pw-link2" class="form__group__input form__group__input--default" name="pw-phrase" value="">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined double__btn--hide">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入按鈕文字2</div>
+                        <input type="text" id="pw-btn2" class="form__group__input form__group__input--default" name="pw-phrase" value="">
+                    </div>
+                </div>
             </section>
             <hr class="my40">
             <section class="section--btn">
@@ -110,6 +129,27 @@
                         <div class="separation separation--or"><span>或</span></div>
                         <div class="paywall__footer">
                             繼續閱讀此篇文章<a href="#!" class="btn--text">加入會員</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="previewHtml0Btn" class="container" style="display: none;">
+                <div>
+                    <div class="paywall paywall--singleColumn paywall--p0 text-center paywall--insider">
+                        <div class="paywall__body pt40">
+                            <div class="h1 font-weight-500 my0">您的閱讀篇數已達上限</div>
+                            <img class="my30" src="https://www.cw.com.tw/images/secant/webaccess-pe@2x.png" alt="線上+紙本閱讀">
+                            <div class="essay mt0-mb1">
+                                現在訂閱天下全閱讀<br>
+                                每天只要7元就能輕鬆提升自己
+                            </div>
+                            <div class="btn__group">
+                                <a class="btn btn--outlined" target="_blank" href="https://www.cw.com.tw/payment?source=paywall0Btn">查看訂閱方案</a>
+                                <a class="btn btn--contained" target="_blank" href="https://account.cwg.tw/register/cw?source=paywall0Btn">加入會員再看一篇</a>
+                            </div>
+                        </div>
+                        <div class="paywall__footer py40">
+                            您已經是訂戶？<a class="btn btn--text otherBtn gtmEvent" gtm-name="Paywall_popup_0_login" href="https://www.cw.com.tw/member/home/MemberLogin.action?site=C_paywall&amp;source=paywall_popup_login" target="_blank">登入</a>
                         </div>
                     </div>
                 </div>
@@ -150,6 +190,50 @@
                 <div class="p20 bg-gray-100 text-center">
                     <button class="btn btn--outlined btn--small mb10">複製</button>
                     <textarea id="javascript" cols="30" rows="10"></textarea>
+                </div>
+                <div id="sourceCss0Btn" class="p20 bg-gray-100 text-center">
+                    <button class="btn btn--outlined btn--small mb10">複製</button>
+                    <textarea id="css" cols="30" rows="10">.article__function {
+    display: none !important;
+}
+main {
+    overflow: hidden;
+}
+.paywall--insider::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 100%;
+    background-color: #f7f7f7;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+.paywall--insider .essay {
+    line-height: 1.5;
+}
+.paywall--insider .btn__group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+.paywall--insider .paywall__body .btn__group .btn {
+    min-width: 182px;
+}
+@media screen and (max-width: 1023px) {
+    .paywall--insider .btn {
+        order: 1;
+    }
+    .paywall--insider .btn + .btn {
+        margin-left: 0;
+        margin-bottom: 10px;
+        order: 0;
+    }
+}</textarea>
                 </div>
             </div>
         </section>
