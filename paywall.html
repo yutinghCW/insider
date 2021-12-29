@@ -136,20 +136,22 @@
             <div id="previewHtml0Btn" class="container" style="display: none;">
                 <div>
                     <div class="paywall paywall--singleColumn paywall--p0 text-center paywall--insider">
-                        <div class="paywall__body pt40">
-                            <div class="h1 font-weight-500 my0">您的閱讀篇數已達上限</div>
-                            <img class="my30" src="https://www.cw.com.tw/images/secant/webaccess-pe@2x.png" alt="線上+紙本閱讀">
-                            <div class="essay mt0-mb1">
-                                現在訂閱天下全閱讀<br>
-                                每天只要7元就能輕鬆提升自己
-                            </div>
-                            <div class="btn__group">
-                                <a class="btn btn--outlined" target="_blank" href="https://www.cw.com.tw/payment?source=paywall0Btn">查看訂閱方案</a>
-                                <a class="btn btn--contained" target="_blank" href="https://account.cwg.tw/register/cw?source=paywall0Btn">加入會員再看一篇</a>
-                            </div>
+                        <div class="paywall__header">
+                            您已經是訂戶？<a class="btn btn--text otherBtn" gtm-name="Paywall_popup_0_login" href="https://www.cw.com.tw/member/home/MemberLogin.action?site=C_paywall&amp;source=paywall_popup_login" target="_blank">登入</a>
                         </div>
-                        <div class="paywall__footer py40">
-                            您已經是訂戶？<a class="btn btn--text otherBtn gtmEvent" gtm-name="Paywall_popup_0_login" href="https://www.cw.com.tw/member/home/MemberLogin.action?site=C_paywall&amp;source=paywall_popup_login" target="_blank">登入</a>
+                        <div class="paywall__body">
+                            <img src="https://www.cw.com.tw/images/secant/webaccess-pe@2x.png" alt="線上+紙本閱讀">
+                            <div class="h1 font-weight-500 mt20 mb0">訂閱天下　無限暢讀</div>
+                            <ul class="check">
+                                <li>天下全閱讀：不限篇數暢讀天下雜誌網站和APP</li>
+                                <li>每日編輯精選推薦：整理全球焦點要聞、產業脈動</li>
+                                <li>串聯頂尖媒體：國際合作夥伴，提供您全面的觀點</li>
+                            </ul>
+                            <a id="paywall_box_l0_a_tag" class="btn btn--contained" gtm-name="Paywall_popup_0_sub" target="_blank" href="https://www.cw.com.tw/payment?source=paywall0">查看訂閱方案</a>
+                        </div>
+                        <div class="separation separation--or"><span>或</span></div>
+                        <div class="paywall__footer">
+                            繼續閱讀此篇文章<a href="#!" class="btn--text">加入會員</a>
                         </div>
                     </div>
                 </div>
@@ -199,6 +201,10 @@
 main {
     overflow: hidden;
 }
+.paywall--insider {
+    display: flex;
+    flex-direction: column;
+}
 .paywall--insider::after {
     content: '';
     display: block;
@@ -211,24 +217,61 @@ main {
     transform: translateX(-50%);
     z-index: -1;
 }
-.paywall--insider .essay {
+.paywall--insider .paywall__header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    line-height: 1.5;
+    background-color: transparent;
+    order: 2;
+}
+.paywall--insider .paywall__body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    order: 1;
+}
+.paywall--insider .paywall__body img {
+    order: 1;
+}
+.paywall--insider .paywall__body .h1 {
+    order: 0;
+}
+.paywall--insider .paywall__body ul.check {
+    order: 2;
+    text-align: center;
+}
+.paywall--insider .paywall__body ul.check li {
+    padding: 0;
+    text-indent: 0;
     line-height: 1.5;
 }
-.paywall--insider .btn__group {
+.paywall .paywall__body ul.check li + li {
+    margin: 0;
+}
+.paywall--insider .paywall__body ul.check li::before {
+    display: none;
+}
+.paywall--insider .paywall__body .btn__group {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     font-weight: normal;
+    order: 3;
 }
 .paywall--insider .paywall__body .btn__group .btn {
     min-width: 182px;
 }
+.paywall--insider .separation,
+.paywall--insider .paywall__footer {
+    display: none;
+}
+
 @media screen and (max-width: 1023px) {
-    .paywall--insider .btn {
+    .paywall--insider .paywall__body .btn__group .btn {
         order: 1;
     }
-    .paywall--insider .btn + .btn {
+    .paywall--insider .paywall__body .btn__group .btn + .btn {
         margin-left: 0;
         margin-bottom: 10px;
         order: 0;
