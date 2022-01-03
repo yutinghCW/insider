@@ -83,21 +83,27 @@ function init0Btn(codeImg, codeTitle, codeText, codeLink, codeBtn, codeLink2, co
 		check += "<li>" + checks[i] + "</li>";
 	}
 	if ( codeTitle != '' ) {
+		Code += "$('.paywall .paywall__body .h1').text('" + codeTitle + "');";
 		$('.paywall--insider .paywall__body .h1').text(codeTitle);
 	}
 	if ( codeText != '' ) {
-		$('.paywall--insider .paywall__body .check').html(check);
+		Code += "$('.paywall .paywall__body ul.check').html('" + check + "');";
+		$('.paywall--insider .paywall__body ul.check').html(check);
 	}
 	if ( codeVariant != '' ) {
+		Code += "$('.paywall .paywall__body .btn--contained').addClass('sp-custom-c" + codeVariant + "-1');";
 		$('.paywall--insider .paywall__body .btn--contained').addClass('sp-custom-c' + codeVariant + '-1');
 	}
 	if ( codeBtn != '' ) {
+		Code += "$('.paywall .paywall__body .btn--contained').text('" + codeBtn + "');";
 		$('.paywall--insider .paywall__body .btn--contained').text(codeBtn);
 	}
 	if ( codeLink != '' ) {
+		Code += "$('.paywall .paywall__body .btn--contained').attr('href', '" + codeLink + "');";
 		$('.paywall--insider .paywall__body .btn--contained').attr('href', codeLink);
 	}
 	if ( codeImg != '' ) {
+		Code += "$('.paywall .paywall__body img').attr('src', '" + codeImg + "');";
 		$('.paywall--insider .paywall__body img').attr('src', codeImg);
 	}
 	Code += `$('.paywall--p0').addClass('paywall--insider');
