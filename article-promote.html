@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>替換文章頁你可能有興趣版位｜insider 製作工具</title>
+    <meta content="telephone=no" name="format-detection">
+    <meta property="og:image" content="https://yutinghcw.github.io/insider/assets/images/meta-share-insider.jpg"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://www.cw.com.tw/assets_new/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://yutinghcw.github.io/design/assets/css/cw.css">
+    <link rel="stylesheet" href="assets/css/generator.css">
+</head>
+
+<body>
+    <header>
+        <div class="container px20">
+            <a href="https://www.cw.com.tw/" target="_blank" class="logo logo--main">
+                <img src="https://www.cw.com.tw/assets_new/img/cw-logo.svg" alt="">
+            </a>
+            <a href="https://commonwealthmagazine.inone.useinsider.com/" target="_blank" class="logo logo--main">
+                <img src="https://useinsider.com/ch/wp-content/uploads/2018/10/insider_logo_2x.png" alt="">
+            </a>
+            <select name="type" id="edmType" class="edm-type">
+                <option value="smart-banner">Smart Banner</option>
+                <option value="paywall">Paywall</option>
+                <option value="article-promote" selected>搶救PV</option>
+            </select>
+        </div>
+    </header>
+    <main class="py40">
+        <div class="container">
+            <h2 class="mt0">替換文章頁「你可能有興趣」版位</h2>
+            <section class="form form--paywall">
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入欲替換篇數</div>
+                        <input type="text" id="promote-order" class="form__group__input form__group__input--default" name="sb-phrase" value="2">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入文章圖片網址</div>
+                        <input type="text" id="promote-img" class="form__group__input form__group__input--default" name="sb-img" value="https://image-resizer.cwg.tw/resize/uri/https%3A%2F%2Fstorage.googleapis.com%2Fwww-cw-com-tw%2Farticle%2F202112%2Farticle-61bae4c098132.jpg/?w=1600&format=webp">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入文章標題</div>
+                        <input type="text" id="promote-title" class="form__group__input form__group__input--default" name="sb-title" value="推動「魚菜共生」進駐校園 日月光為「食農教育」再添新力">
+                    </div>
+                </div>
+                <div class="form__group form__group--outlined">
+                    <div class="label">
+                        <div class="form__group__placeholder">請輸入文章連結</div>
+                        <input type="text" id="promote-link" class="form__group__input form__group__input--default" name="sb-phrase" value="https://www.cw.com.tw/article/5119378">
+                    </div>
+                </div>
+            </section>
+            <hr class="my40">
+            <section class="section--btn">
+                <button id="source" class="btn btn--contained mb10 mx0">實驗用原始碼</button>
+            </section>
+        </div>
+        <section class="mt20">
+            <div id="sourceCode" class="container" style="display: none;">
+                <div class="p20 bg-gray-100 text-center">
+                    <button class="btn btn--outlined btn--small mb10">複製 JavaScript</button>
+                    <textarea id="javascript" cols="30" rows="10">$('.breaking').remove();</textarea>
+                </div>
+            </div>
+        </section>
+        <section id="sop" class="section--sop mt60">
+            <div class="container">
+                <div class="bg-gray-100 p30">
+                    <h2 class="my0">圖片網址哪裡來？</h2>
+                    <ul class="mb0">
+                        <li>
+                            直接複製主圖網址：右鍵 > 複製圖片位址
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="black"></div>
+    </main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://yutinghcw.github.io/design/assets/js/cw.js"></script>
+	<script src="assets/js/generator.js"></script>
+	<script src="assets/js/promote.js"></script>
+</body>
+
+</html>
