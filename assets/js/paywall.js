@@ -51,6 +51,7 @@ function init0(codeImg, codeTitle, codeText, codeLink, codeBtn, codeVariant) {
 	$("#sourceCode textarea#javascript").val(Code);
 }
 function init0Btn(codeImg, codeTitle, codeText, codeLink, codeBtn, codeLink2, codeBtn2, codeVariant) {
+	let day = new Date().getUTCFullYear() + '' + new Date().toLocaleString('en-CA').split('-')[1];
 	let init = `<div class="paywall__header">
 		您已經是訂戶？<a class="btn btn--text otherBtn" gtm-name="Paywall_popup_0_login" href="https://www.cw.com.tw/member/home/MemberLogin.action?site=C_paywall&amp;source=paywall_popup_login" target="_blank">登入</a>
 	</div>
@@ -102,6 +103,15 @@ function init0Btn(codeImg, codeTitle, codeText, codeLink, codeBtn, codeLink2, co
 		Code += "$('.paywall .paywall__body .btn--contained').attr('href', '" + codeLink + "');";
 		$('.paywall--insider .paywall__body .btn--contained').attr('href', codeLink);
 	}
+	if ( codeBtn != '' || codeLink != '' ) {
+		Code += "$('.paywall .paywall__body .btn--contained').addClass('gtmEvent');";
+		Code += "$('.paywall .paywall__body .btn--contained').attr('gtm-name', 'Paywall_popup_0_register');";
+		Code += "$('.paywall .paywall__body .btn--contained').attr('eventaction', 'Paywall_popup_0_register_CG_" + day + "');";
+		$('.paywall--insider .paywall__body .btn--contained').addClass('gtmEvent');
+		$('.paywall--insider .paywall__body .btn--contained').attr('gtm-name', 'Paywall_popup_0_register');
+		$('.paywall--insider .paywall__body .btn--contained').attr('eventaction', 'Paywall_popup_0_register_CG_' + day);
+		$('.paywall--insider .paywall__body .btn--contained').attr('href', codeLink);
+	}
 	if ( codeImg != '' ) {
 		Code += "$('.paywall .paywall__body img').attr('src', '" + codeImg + "');";
 		$('.paywall--insider .paywall__body img').attr('src', codeImg);
@@ -116,7 +126,12 @@ $('.paywall--insider .paywall__body .btn').appendTo(".btn__group");
 	if ( codeBtn2 != '' && codeLink2 != '' ) {
 		let newBtn = `<a class="btn btn--outlined" target="_blank" href="${codeLink2}">${codeBtn2}</a>`;
 		$(newBtn).prependTo(".btn__group");
-		Code += `let newBtn = \`<a class="btn btn--outlined" target="_blank" href="${codeLink2}">${codeBtn2}</a>\`\;
+		$('.paywall--insider .paywall__body .btn--outlined').addClass('sp-custom-c' + codeVariant + '-1');
+		$('.paywall--insider .paywall__body .btn--outlined').addClass('gtmEvent');
+		$('.paywall--insider .paywall__body .btn--outlined').attr('gtm-name', 'Paywall_popup_0_sub');
+		$('.paywall--insider .paywall__body .btn--outlined').attr('eventaction', 'Paywall_popup_0_sub_CG_' + day);
+		$('.paywall--insider .paywall__body .btn--outlined').attr('href', codeLink);
+		Code += `let newBtn = \`<a class="btn btn--outlined sp-custom-c${codeVariant}-1" target="_blank" href="${codeLink2}">${codeBtn2}</a>\`\;
 $(newBtn).prependTo(".btn__group");`;
 	}
 	$("#sourceCode textarea#javascript").val(Code);
