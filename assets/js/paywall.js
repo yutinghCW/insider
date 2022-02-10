@@ -131,7 +131,7 @@ $('.paywall--insider .paywall__body .btn').appendTo(".btn__group");
 		$('.paywall--insider .paywall__body .btn--outlined').attr('gtm-name', 'Paywall_popup_0_sub');
 		$('.paywall--insider .paywall__body .btn--outlined').attr('eventaction', 'Paywall_popup_0_sub_CG_' + day);
 		$('.paywall--insider .paywall__body .btn--outlined').attr('href', codeLink);
-		Code += `let newBtn = \`<a class="btn btn--outlined sp-custom-c${codeVariant}-1" target="_blank" href="${codeLink2}">${codeBtn2}</a>\`\;
+		Code += `let newBtn = \`<a class="btn btn--outlined sp-custom-c${codeVariant}-1 gtmEvent" gtm-name="Paywall_popup_0_sub" eventaction="Paywall_popup_0_sub_CG_${day}" target="_blank" href="${codeLink2}">${codeBtn2}</a>\`\;
 $(newBtn).prependTo(".btn__group");`;
 	}
 	$("#sourceCode textarea#javascript").val(Code);
