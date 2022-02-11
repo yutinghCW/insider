@@ -60,9 +60,9 @@ header {
                 border-color: $surface;
             }
         }
-        &.double__btn--hide {
-            display: none;
-        }
+    }
+    .double__btn--hide {
+        display: none;
     }
 }
 
